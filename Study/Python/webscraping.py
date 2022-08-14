@@ -9,11 +9,33 @@ data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.nhn?sel=pnt&d
 # soup이라는 변수에 "파싱 용이해진 html"이 담긴 상태가 됨
 # 이제 코딩을 통해 필요한 부분을 추출하면 된다.
 soup = BeautifulSoup(data.text, 'html.parser')
-print(soup)  # HTML을 받아온 것을 확인할 수 있다.
+# print(soup)  # HTML을 받아온 것을 확인할 수 있다.
+
 
 # select를 이용해서, tr들을 불러오기
+# because, 각 영화들이 old_content라는 id를 갖는 div 안에 table 안에 tbody 안에 tr 태그로 들어있다. 
 movies = soup.select('#old_content > table > tbody > tr')
-print(len(movies)) # 56
 
+
+# print(len(movies)) # 56
+
+# for movie in movies:
+#     print(movie)
+
+# # 각 영화에서 영화 제목이 적혀있는 a 태그를 select_one()으로 찾아본다.
+# # movies (tr들) 의 반복문을 돌리기
+# for movie in movies:
+#     # movie 안에 a 가 있으면,
+#     # (조건을 만족하는 첫 번째 요소, 없으면 None을 반환한다.)
+#     a_tag = movie.select_one('td.title > div > a') 
+#     print(a_tag)
+
+
+# movies (tr들) 의 반복문을 돌리기
 for movie in movies:
-    print(movie)
+    # movie 안에 a 가 있으면,
+    a_tag = movie.select_one('td.title > div > a') 
+    if a_tag is not None:
+        print(a_tag.text)
+
+
