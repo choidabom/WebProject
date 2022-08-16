@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text-on-img</title>
+    <style>
+        /* 힌트: 쓰이는 목록
+        color
+        width, height
+        background-image, background-position, background-size
+        border-radius, text-align, padding-top */
+        .background-wrap{
+            background-image: url('https://www.ancient-origins.net/sites/default/files/field/image/Agesilaus-II-cover.jpg');
+            background-size: 272px 196px;
+            background-position:center;
+            width: 300px;
+            height: 196px;
+            border-radius: 15px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content span {
+            color: white;
+            text-align: center;
+        }
+
+        .content span:nth-child(1){
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .content span:nth-child(2){
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="text-on-img">
+        <div class="background-wrap">
+            <div class="content">
+                <span>로그인 페이지</span><br>
+                <span>아이디, 비밀번호를 입력해주세요</span>
+            </div>
+        </div>
+        <div class="login">
+            ID: <input type="ID"><br><br>
+            PW: <input type="PW"><br><br>
+            <button>로그인하기</button>
+        </div>
+    </div>
+</body>
+</html>
