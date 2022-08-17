@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- 부트스트랩 완전 기본 알기 ! -->
+<html lang="en">
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <title>My shoppinmall</title>
+    <style>
+
+
+    </style>
+
+</head>
+<body class="container">
+    <h1>WEB</h1>
+    <!-- Grid => row 행 역할, col 열 역할
+        bootstrap은 12 칸의 Grid를 가지고 있다.
+        각각의 칸마다 Grid를 배치할 수도, 세 칸에 배치할 수도 있다.
+        So, 2:10의 비율로 나눔.-->
+    <div class="row"> 
+        <ul class="col-sm-2">
+            <li>html</li>
+            <li>css</li>
+            <li>JavaScript</li>
+        </ul>
+        <article class="col-sm-10">
+            <h2>Welcome</h2>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum provident vitae commodi id quis? Eos quas officiis doloremque id quae et facere, totam nemo error accusamus sit itaque hic animi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id quas accusantium placeat mollitia totam quia perferendis quibusdam soluta perspiciatis adipisci vel dolores, deleniti, atque ducimus iste eius odit, obcaecati nemo!
+            
+            <br><br>
+            <!--클래스 값을 없애면 기본 버튼이 나옴!-->
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-primary">Primary</button>
+                <a href="/bootstrap.html" class="btn btn-primary">Update</a>
+            </div>
+                <input type="button" class="btn btn-success" value="Delete">
+        </article>
+    </div>
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+</html>
