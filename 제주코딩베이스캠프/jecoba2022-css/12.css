@@ -31,6 +31,47 @@ img {
 .page-title {
 	text-align: center;
 }
+.main-menu {
+	/* display: none; */
+	/* position: absolute; */
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 20%;
+	height: 100%;
+	padding-top: 90px;
+	/* background: rgb(0, 255, 0); */
+	background: rgba(0, 255, 0, 0.7);
+	/* transform: translate(100px, 100px); */
+	/* transform: translate3d(100px, 100px, 0); */
+	/* transform: translate(100px, 0); */
+	transform: translateX(-100%);
+	transition: 0.5s;
+	opacity: 0;
+}
+.main-menu-item {
+	display: block;
+	margin: 10px;
+	background: #fff;
+}
+#main-menu-check {
+	position: fixed;
+	left: -10000px;
+	top: 20px;
+	z-index: 1; /* 숫자가 클 수록 위로 올라와요 */
+}
+#main-menu-check:checked ~ .main-menu {
+	/* display: block; */
+	background: rgba(255, 0, 0, 0.7);
+	transform: translateX(0);
+	opacity: 1;
+}
+label[for='main-menu-check'] {
+	position: fixed;
+	left: 40px;
+	top: 20px;
+	z-index: 1;
+}
 
 /* 미디어 쿼리 media queries */
 @media (min-width: 600px) {

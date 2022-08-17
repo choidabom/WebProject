@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        @media (min-width: 500px){
+        .container {
+            /* 내가 가진 텍스트양만큼만 늘어남. */
+            display: flex;
+            
+            /* display: inline-flex; */
+            
+            height: 100vh; /*viewport height*/
+            /* flex와 inline-flex의 차이는  */
+            background: cornsilk;
+        }       
+        
+        .item:nth-child(1){
+            width: 30%;
+        }
+        .item:nth-child(2){
+            width: 50%;
+        }
+        .item:nth-child(3){
+            width: 20%;}
+        }
+    /* 전체 공간은 Grid로 짜고 세부 공간은 Flex로 짠다.  */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">aaaaaa</div>
+        <div class="item">bbbbbb</div>
+        <div class="item">cccccc</div>
+    </div>
+    <strong>ㅋㅋㅋㅋㅋㅋㅋㅋ</strong>  <!-- inline -->
+</body>
+</html>

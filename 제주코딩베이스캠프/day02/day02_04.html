@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 연습</title>
+    <link rel="stylesheet" href="reset.css"> <!--?????????-->
+    <link rel="stylesheet" href="day02_04.css">
+
+</head>
+<body>
+    <!-- HTML 구조 잡기 -->
+    <!-- 꽉 차게끔 header와 footer는 건드릴 필요가 없다. -->
+    <!-- 공통적인 부분은 클래스로 빼서 쓸 수 있다./클래스는 여러개 사용할 수 있다. -->
+    <header class="header gap"> 
+        <h1>안녕 !</h1>
+        <label for="main-menu-check">메뉴</label>
+        <input type="checkbox" id="main-menu-check">
+        <nav class="main-menu">
+            <a class="main-menu-item" href="#">menu 1</a>
+            <a class="main-menu-item" href="#">menu 2</a>
+            <a class="main-menu-item" href="#">menu 3</a>
+            <a class="main-menu-item" href="#">menu 4</a>
+        </nav>
+    </header>
+    <div class="content-container"> <!-- 여기에서도 gap을 넣게 되면 div 태그부분에 padding이 들어가기 때문에 꽉차지 않는다. -->
+        <article class="main-article gap">
+            <img class = "article-img" src="C:\Users\dabom\WebProject\제주코딩베이스캠프\jecoba2022-css\images\hello.png" alt="Hello HTML">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus impedit tempore eaque aliquam odio architecto nisi enim nihil tempora perferendis?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem labore mollitia expedita nobis quo sint reprehenderit esse veniam cum atque repellendus totam, iste saepe itaque neque minima voluptatibus veritatis dolore!
+        </article>
+        <aside class="ad gap">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus impedit tempore eaque aliquam odio architecto nisi enim nihil tempora perferendis?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil impedit sunt, dignissimos, est odit voluptate dolorum autem deleniti qui nulla consectetur? Nemo tenetur officia magnam enim alias. Harum, earum itaque.
+        </aside>
+    </div>
+    <footer class="footer gap">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus impedit tempore eaque aliquam odio architecto nisi enim nihil tempora perferendis?
+    </footer>
+
+    <!-- 보완해야할 점 => 문단 간 띄어쓰기  -->
+</body>
+</html>
