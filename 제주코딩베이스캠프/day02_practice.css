@@ -1,0 +1,66 @@
+
+body{ /* 행 간 조절 */
+    line-height: 1.4;
+}
+img {
+    max-width: 100%;
+}
+.gap {
+    padding: 30px; /*내부여백*/
+}
+.article-img {
+    width: 100%; 
+    max-width: 100%;
+    border: solid;  
+}
+.header {
+    background-color: #CB5A73;
+    /* 텍스트를 정렬할려면 텍스트를 품고 있는 블록에서 text-align을 해주면 된다. */
+    text-align: center;
+}
+.main-article {
+
+    text-align: justify;
+    background-color: #68BCDA;
+}
+.ad {
+    background-color: #e1a85a;
+}
+.footer {
+    background-color: #4D9688;
+}
+
+/*미디어 쿼리 media queries*/
+@media (min-width: 800px) {
+    /* 모바일에서는 최대로 표현하되 800px이 넘어가면 원래 크기대로 표현 */
+    .content-container{
+        font-size: 0;
+    }
+    .main-article{
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+        font-size: 1rem; /*root em*/
+    }
+    .ad {
+        display: inline-block;
+        vertical-align: top;
+        width: 40%;
+        font-size: 1rem; /*root em*/
+    }
+}
+
+@media(min-width:800px){
+    .article-img{
+        float: left;
+        /* 최대 폭이 100% but, 그냥 폭은 안 건듬*/
+        width: auto;
+        /* 부모를 뚫고 나가지 않게끔 해주는 것! */
+        /* max-width: 100%; ?????????????? */ 
+        margin-right: 30px; 
+    }
+}
+
+/* nth-child(n) => 태그 종류 안 가리고 무조건 순서대로 지정 */
+/* nth-of-type(n) => 해당 태그끼리만 순서 지정 */
+/* p:nth-child(3) */

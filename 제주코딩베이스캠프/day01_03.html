@@ -7,15 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        header{
-            background-color: red;
-        }
-        p{
-            color: red;
-        }
-
-        .special-text{
-            font-size: 24px;
+        .box{
+            /* box-sizing: border-box; (border까지 width에 포함)*/
+            box-sizing: content-box; /*(기본값)*/
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            border: 5px solid black;
+            margin: 15px;
         }
 
     </style>
@@ -25,7 +24,7 @@
         <header>
             <h1>안녕하세요!</h1>
         </header>
-        <section>
+        <section class="box">
             <h2>섹션1</h2>
             <p>Lorem ipsum dolor sit amet</p>
             <p>Lorem ipsum dolor sit amet</p>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 구글 웹폰트 입히기 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
+    
+    <title>text-on-img-middle</title>
+    <style>
+        *{
+            font-family: 'IBM Plex Sans KR', sans-serif;
+        }
+        /* 힌트: 쓰이는 목록
+        color
+        width, height
+        background-image, background-position, background-size
+        border-radius, text-align, padding-top */
+
+        /* Q. 로그인 화면을 가운데로 가져오기
+        힌트: 요소 전체를 감싸는 div를 만들어 width를 주고, margin: auto를 사용하면 되겠죠? */
+
+        .text-on-img{
+            color: white;
+
+            width: 300px;
+            height: 200px;
+
+            background-image: url('https://www.ancient-origins.net/sites/default/files/field/image/Agesilaus-II-cover.jpg');
+            background-position:center;
+            background-size: cover;
+
+            border-radius: 10px;
+            text-align: center;
+            padding-top: 40px;
+        }
+        .wrap {
+            /* margin 속성값을 auto로 설정하면, 
+            웹 브라우저가 수평 방향 마진(margin) 값을 자동으로 설정한다.
+            margin: 0 auto; 블록구조를 가운데 정렬할 때 사용 */
+            margin: 10px auto;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="text-on-img">
+            <h1>로그인 페이지</h1>
+            <h5>아이디, 비밀번호를 입력해주세요</h5>
+        </div>
+        <div class="login">
+            <p>
+                ID: <input type="ID">
+            </p>    
+            <p>
+                PW: <input type="PW">
+            </p>    
+        </div>
+        <button>로그인하기</button>
+    </div>
+</body>
+</html>

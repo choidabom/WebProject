@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* [display 속성]
+        none: 보이지 않음
+        block: 박스 형태, 레이아웃 작성에 사용하는 요소
+        inline: 텍스트처럼 배치
+        inline-block: block과 inline의 중간 형태 */
+        * {
+            margin: 0; /*여백이 없다고 생각하면 됨*/
+            padding: 0;
+        }
+        article { /*부모가 article이기에 자식들도 작아졌다.*/
+            width: 400px;
+        }
+        section {
+            background: red;
+        }
+        section:nth-child(2){
+            background: blue;
+        }   
+    </style>
+</head>
+<body>
+    <article>
+        <section class="container">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                Veniam, nihil.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                Veniam, nihil.</p>
+        </section>   
+        <section class="container">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                Veniam, nihil.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                Veniam, nihil.</p>
+        </section>   
+    </article>
+</body>
+</html>

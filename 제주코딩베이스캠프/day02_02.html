@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         /* [display 속성]
+        none: 보이지 않음
+        block: 박스 형태, 레이아웃 작성에 사용하는 요소
+        inline: 텍스트처럼 배치
+        inline-block: block과 inline의 중간 형태 */
+        body{
+            font-size: 20px; /* 폰트 크기가 0이기 때문에 height가 없는 것! 완전히 없어진건 아님 */
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        section {
+            vertical-align: top;
+            display: inline-block;
+            width: 100%;
+        }
+        .a{
+            /* 꽉 채울려면 픽셀이 아니라 퍼센트로 해주면 된다. */
+            width: calc(30% - 10px);
+            background-color: dodgerblue;
+        }
+        .b{
+            width: 200px;
+            background-color: limegreen;
+        }
+    </style>
+</head>
+<body>
+    <!-- inline 속성은 text 같은 친구이기 때문에 띄어쓰기.. -->
+    <section class="a">
+        Lorem 
+        ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, odit?
+    </section>
+    <section class="b">
+        Lorem 
+        ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, odit?
+    </section>
+</body>
+</html>
