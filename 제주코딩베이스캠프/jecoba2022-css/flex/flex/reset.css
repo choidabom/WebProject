@@ -47,3 +47,17 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+.container {
+
+}
+.item {
+	padding: 10px;
+	background: gray;
+	border: 1px solid black;
+}
+.item:nth-child(2) {
+	background: pink;
+}
+.item:nth-child(3) {
+	background: limegreen;
+}
