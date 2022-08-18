@@ -20,3 +20,34 @@ print(all_users[0]['name']) # 0번째 결과값의 'name'을 보기
 
 for user in all_users:  # 반복문을 돌며 모든 결과값을 보기
     print(user)
+
+# //////////////////////////////////////////////////////////
+# 특정 결과 값을 뽑아보기
+
+user = db.users.find_one({'name':'bobby'})
+print(user)
+
+# 그 중 특정 키 값을 빼고 보기
+user = db.users.find_one({'name':'bobby'},{'_id':False})
+print(user)
+
+
+# //////////////////////////////////////////////////////////
+# 수정하기
+
+# 생김새
+db.people.update_many(찾을조건,{ '$set': 어떻게바꿀지 })
+
+# 예시 - 오타가 많으니 이 줄을 복사해서 씁시다!
+db.users.update_one({'name':'bobby'},{'$set':{'age':19}})
+
+user = db.users.find_one({'name':'bobby'})
+print(user)
+
+
+# //////////////////////////////////////////////////////////
+# 삭제하기
+db.users.delete_one({'name':'bobby'})
+
+user = db.users.find_one({'name':'bobby'})
+print(user)
