@@ -27,28 +27,35 @@
 
 @media (min-width: 1024px) {
 	.page {
-		
+		display: flex;
+		flex-wrap: wrap;
 	}
+	/* 헤더는 꽉채우기 */
 	.header {
-		
+		width: 100%;
 	}
+	/* 메뉴는 꽉채우기 */
 	.menu {
-		
+		width: 100%;
 	}
+	/* 가운데 영역 */
 	.primary {
-		
+		order: 2;
+		width: 60%;
 	}
 	.secondary {
-		
+		width: 20%;
 	}
+	/* order로 순서바꿔주기 */
 	.secondary-a {
-		
+		order: 1;
 	}
 	.secondary-b {
-		
+		order: 3;
 	}
 	.footer {
-		
+		order: 4;
+		width: 100%;
 	}
 }
 
