@@ -4,15 +4,15 @@
 
 => Flask 서버를 만들 때는 항상 프로젝트 폴더 안에 static, templates 폴더와 app.py를 먼저 만들고 시작한다.
 
-# Flask 기본 폴더구조
+## Flask 기본 폴더구조
 
 프로젝트 폴더 안에
 
-- static 폴더 (이미지, css파일)
-- templates 폴더 (html파일)
-- app.py 파일 (통상적으로 flask 서버를 돌리는 파일 이름)
+- **static 폴더 (이미지, css파일)**
+- **templates 폴더 (html파일)**
+- **app.py 파일 (통상적으로 flask 서버를 돌리는 파일 이름)**
 
-``html
+```python
 # flask 시작 코드
 from flask import Flask
 app = Flask(__name__)    # Flask를 객체화 시켜서 app이라는 변수에 저장
@@ -26,4 +26,60 @@ def home():
 if __name__ == '__main__':  # 모듈이 실행 됨을 알림
    app.run('0.0.0.0',port=5000,debug=True)
    # 서버 실행, 파라미터로 debug 여부, port 설정 가능
-``
+```
+
+## HTML 파일 불러오기
+1. 간단한 index.html 파일을 templates 안에 만든다.
+- templates 폴더의 역할
+    - HTML 파일을 담아두고, 불러오는 역할을 한다.
+2. html 파일 불러오기
+- flask 내장함수 render_template를 이용
+
+```python
+from flask import Flask, render_template
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+   return render_template('index.html')
+
+if __name__ == '__main__':
+   app.run('0.0.0.0',port=5000,debug=True)
+```
+
+## API 만들기
+- GET : 데이터 조회(Read)
+- POST : 데이터 생성(Create), 변경(Update), 삭제(Delete)
+GET 요청 API코드
+@app.route('/test', methods=['GET']) # url: /test, type: GET
+def test_get():
+   title_receive = request.args.get('title_give') # 'title_give'값 가져오기
+   print(title_receive)
+   return jsonify({'result':'success', 'msg': '이 요청은 GET!'})
+GET 요청 확인 Ajax코드
+$.ajax({
+    type: "GET",
+    url: "/test?title_give=봄날은간다", # URL뒤에 ?를 붙여 key=value로 전달
+    data: {},
+    success: function(response){
+       console.log(response)
+    }
+  })
+POST 요청 API코드
+@app.route('/test', methods=['POST'])
+def test_post():
+   title_receive = request.form['title_give'] # 'title_give'로 가져온 값
+   print(title_receive)
+   return jsonify({'result':'success', 'msg': '이 요청은 POST!'})
+POST 요청 확인 Ajax코드
+$.ajax({
+    type: "POST",
+    url: "/test",
+    data: { title_give:'봄날은간다' }, # API코드에 가져온 값 이름이랑 똑같이 해줘야함
+    success: function(response){
+       console.log(response)
+    }
+  })
+  
+# (INTERNAL SERVER ERROR) 서버쪽에서 에러가 났을 때
+# app.py의 에러를 확인 해야됨

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button.blue {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <button class="myBtn">click me!</button>
+    <script>
+        // 1. 이벤트 삽입
+        // target.addEventListener(type, listener) 문법 형태를 지님.
+        
+        // 이벤트의 타입에는 click, mouseover, mouseout, wheel 등 다양한 이벤트를 감지합니다.
+        // listener 함수의 인수에는 이벤트에 대한 정보가 담겨있습니다.
+        // const myBtn = document.querySelector('.myBtn');
+        // myBtn.addEventListener('click', function() {
+        //     console.log('clicked!')
+        // })
+
+        // 2. 클래스 제어
+        const myBtn = document.querySelector("button");
+        myBtn.addEventListener('click', function() {
+            myBtn.classList.add('blue');
+            // myBtn.classList.remove(“blue”);     클래스를 제거합니다.
+            // myBtn.classList.toggle(“blue”);     클래스를 토글합니다. 없으면 넣어주고, 있으면 제거합니다.
+            // myBtn.classList.contains(“blue”);   해당하는 클래스가 있는지 확인합니다.
+        })
+        // 자바스크립트로 직접적으로 스타일을 바꾸지 말라~!
+        // CSS로 스타일을 바꿔야할 경우 자바스크립트로 스타일을 바꾸지 않는게 좋다.
+        // 
+    </script>
+</body>
+</html>

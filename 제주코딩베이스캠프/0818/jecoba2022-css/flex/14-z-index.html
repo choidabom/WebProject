@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>flex</title>
+	<link rel="stylesheet" href="reset.css">
+	<style>
+		html {
+			height: 100%;
+		}
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100%;
+		}
+		.container {
+			display: flex;
+			background: cornsilk;
+		}
+		.item {
+			/* transition: 1s ease; */
+			transition: 0.5s cubic-bezier(0.97,-0.7, 0.28, 2.62);
+		}
+		.item:hover {
+			transform: scale(1.5);
+			/* transition: 1s; */
+			z-index: 1;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="item">aaaaaaaaa</div>
+		<div class="item">bbbbbbbb</div>
+		<div class="item">ccccccccc</div>
+	</div>
+</body>
+</html>
