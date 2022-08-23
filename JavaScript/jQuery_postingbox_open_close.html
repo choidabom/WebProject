@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<!-- jQuery는 HTML 요소들을 조작하는 편리한 JavaScript 라이브러리  -->
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+    <title>나홀로 링크 메모장에 포스팅박스 열기/닫기 기능 붙이기</title>
+    <!-- '포스팅 박스 닫기' 버튼을 누르면 
+    => 포스팅 박스가 사라지고, 글씨가 '포스팅 박스 열기'로 바뀌고
+        다시 버튼을 누르면
+    => 포스팅 박스가 열리고, 글씨가 '포스팅 박스 닫기'로 바뀌는 기능 -->
+    <style>
+        * {
+            font-family: 'Jua', sans-serif;
+        }
+        .wrap {
+            margin: auto;
+            width: 900px;
+        }
+        .comment {
+            font-weight: bold;
+            color: blue;
+        }
+        .posting-box {
+            margin: 10px auto 30px auto;
+            width:500px;
+
+            border: 3px solid black;
+            border-radius: 5px;
+
+            padding: 25px;
+        }
+        #post-box{
+            display: block;
+        }
+    </style>
+    <script>
+        // 1. 버튼을 누르면 실행될 함수를 만들어 script 태그 안에 넣어준다.
+        function openclose(){
+            // 여기에 jQuery를 이용해 코드를 짤 예정
+
+            // 3. 버튼을 누르면 포스팅 박스가 열려 있는지, 닫혀 있는지 알 수 있게 됨.
+            // 4. 버튼을 눌렀을 때 상황에 맞게 글씨가 바뀌게 함.
+
+
+            // id 값 post-box의 display 값이 block 이면(= 눈에 보이면)
+            if ($("#post-box").css("display") == "block") {
+                // post-box를 가리고
+                $("#post-box").hide();
+                // 다시 버튼을 클릭하면, 박스 열기를 할 수 있게 텍스트 바꿔두기
+                $("#btn-post-box").text("포스팅 박스 열기");
+            } else {
+                // 아니면(눈에 보이지 않으면) post-box를 펴라
+                $("#post-box").show();
+                // 다시 버튼을 클릭하면, 박스 닫기를 할 수 있게 텍스트 바꿔두기
+                $("#btn-post-box").text("포스팅 박스 닫기");
+            }
+        }
+        
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="jumbotron">
+            <h1 class="display-4">나홀로 링크 메모장!</h1>
+            <p class="lead">중요한 링크를 저장해두고, 나중에 볼 수 있는 공간입니다</p>
+            <hr class="my-4">
+            <p class="lead">
+                <!-- 2. 버튼에 script에서 만든 함수를 연결한다. -->
+                <button onclick="openclose()" id="btn-post-box" type="button" class="btn btn-primary btn-lg">포스팅박스 열기</button>
+            </p>
+        </div>
+        <div class="posting-box" id="post-box">
+            <div class="form-group">
+                <label for="exampleInputEmail1">아티클 URL</label>
+                <input id="post-url" type="email" class="form-control" aria-describedby="emailHelp"
+                    placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">간단 코멘트</label>
+                <input type="password" class="form-control" placeholder="">
+            </div>
+            <button id="btn-posting-box" type="submit" class="btn btn-primary">기사 저장</button>
+        </div>
+        <div id="cards-box" class="card-columns"> 
+            <div class="card">
+                <img class="card-img-top"
+                    src="https://d2ur7st6jjikze.cloudfront.net/offer_photos/29590/185689_medium_1525763241.jpg?1525763241"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <a href="http://naver.com" class="card-title">여기 기사 제목이 들어가죠</a>
+                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
+                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top"
+                    src="https://d2ur7st6jjikze.cloudfront.net/offer_photos/29590/185689_medium_1525763241.jpg?1525763241"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <a href="http://naver.com" class="card-title">여기 기사 제목이 들어가죠</a>
+                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
+                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top"
+                    src="https://d2ur7st6jjikze.cloudfront.net/offer_photos/29590/185689_medium_1525763241.jpg?1525763241"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <a href="http://naver.com" class="card-title">여기 기사 제목이 들어가죠</a>
+                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
+                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top"
+                    src="https://d2ur7st6jjikze.cloudfront.net/offer_photos/29590/185689_medium_1525763241.jpg?1525763241"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <a href="http://naver.com" class="card-title">여기 기사 제목이 들어가죠</a>
+                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
+                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top"
+                    src="https://d2ur7st6jjikze.cloudfront.net/offer_photos/29590/185689_medium_1525763241.jpg?1525763241"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <a href="http://naver.com" class="card-title">여기 기사 제목이 들어가죠</a>
+                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
+                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
